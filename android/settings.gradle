@@ -1,6 +1,23 @@
-pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
-plugins { id("com.facebook.react.settings") }
-extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+pluginManagement {
+    // Menyertakan build plugin React Native
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+}
+
+plugins {
+    // Mendefinisikan plugin untuk pengaturan React Native
+    id("com.facebook.react.settings")
+}
+
+// Mengonfigurasi ekstensi untuk autolinking
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    ex.autolinkLibrariesFromCommand()
+}
+
+// Menentukan nama root project
 rootProject.name = 'Sesi6'
+
+// Menyertakan modul aplikasi
 include ':app'
+
+// Menyertakan build plugin React Native
 includeBuild('../node_modules/@react-native/gradle-plugin')
